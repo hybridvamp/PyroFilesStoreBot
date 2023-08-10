@@ -24,17 +24,11 @@ This is Files Store Bot Specially made for @DramaOST
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
 🤖 **My Name:** [Files Store Bot](https://t.me/{BOT_USERNAME})
-
 📝 **Language:** [Python3](https://www.python.org)
-
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
-
 📡 **Hosted on:** [Private VPS](https://t.me/hybrid_bots)
-
 🧑🏻‍💻 **Developer:** @Hybrid_Vamp
-
 👥 **Support Group:** [Hybrid Chat](https://t.me/hybrid_chat)
-
 📢 **Updates Channel:** [Hybrid Bots](https://t.me/hybrid_bots)
 """
 	ABOUT_DEV_TEXT = f"""

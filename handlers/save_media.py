@@ -95,7 +95,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Open Link", url=share_link)],
                  [InlineKeyboardButton("Bots Channel", url="https://t.me/hybrid_bots"),
-                  InlineKeyboardButton("Support Group", url="https://t.me/hybrid_chat")]]
+                  InlineKeyboardButton("Support Group", url="https://t.me/JoinOT")]]
             ),
             disable_web_page_preview=True
         )

@@ -8,6 +8,7 @@ from binascii import (
 )
 from pyrogram import (
     Client,
+    enums,
     filters
 )
 from pyrogram.errors import (
@@ -19,8 +20,7 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     InlineKeyboardButton,
     CallbackQuery,
-    Message,
-    ChatType
+    Message
 )
 from configs import Config
 from handlers.database import db
@@ -74,8 +74,8 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/hybrid_chat"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/hybrid_bots")
+                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -110,7 +110,7 @@ async def start(bot: Client, cmd: Message):
 @Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.chat(Config.DB_CHANNEL))
 async def main(bot: Client, message: Message):
 
-    if message.chat.type == ChatType.PRIVATE:
+    if message.chat.type == enums.ChatType.PRIVATE:
 
         await add_user_to_database(bot, message)
 
@@ -120,7 +120,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/hybrid_chat)",
+            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/JoinOT)",
                                      disable_web_page_preview=True)
             return
 
@@ -136,7 +136,7 @@ async def main(bot: Client, message: Message):
             quote=True,
             disable_web_page_preview=True
         )
-    elif message.chat.type == ChatType.CHANNEL:
+    elif message.chat.type == enums.ChatType.CHANNEL:
         if (message.chat.id == int(Config.LOG_CHANNEL)) or (message.chat.id == int(Config.UPDATES_CHANNEL)) or message.forward_from_chat or message.forward_from:
             return
         elif int(message.chat.id) in Config.BANNED_CHAT_IDS:
@@ -148,7 +148,7 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.id)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=hybrid_{str_to_b64(file_er_id)}"
+            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=AbirHasan2005_{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
@@ -350,8 +350,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/hybrid_chat"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/hybrid_bots")
+                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -371,7 +371,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/hybrid_chat).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/JoinOT).",
                         disable_web_page_preview=True
                     )
                     return
@@ -394,7 +394,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/hybrid_chat).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/JoinOT).",
                     disable_web_page_preview=True
                 )
                 return
@@ -404,8 +404,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/hybrid_chat"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/hybrid_bots")
+                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),

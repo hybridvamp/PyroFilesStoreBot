@@ -1,7 +1,7 @@
-pyrogram
+pyrogram==2.0.35
 TgCrypto
 motor
 aiofiles
-dnspython
+dnspython==2.3.0
 psutil
 pyromod==1.5

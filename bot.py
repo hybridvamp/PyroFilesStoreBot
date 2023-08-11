@@ -167,7 +167,7 @@ async def main(bot: Client, message: Message):
                 disable_web_page_preview=True
             )
         except Exception as err:
-            await bot.leave_chat(message.chat.id)
+            #await bot.leave_chat(message.chat.id)
             await bot.send_message(
                 chat_id=int(Config.LOG_CHANNEL),
                 text=f"#ERROR_TRACEBACK:\nGot Error from `{str(message.chat.id)}` !!\n\n**Traceback:** `{err}`",

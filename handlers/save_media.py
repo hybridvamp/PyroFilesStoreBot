@@ -84,10 +84,10 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
     try:
         forwarded_msg = await message.forward(Config.DB_CHANNEL)
         file_er_id = str(forwarded_msg.id)
+        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=hybrid_{str_to_b64(file_er_id)}"
         await forwarded_msg.reply_text(
             f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!\n\nLink: {share_link}",
             disable_web_page_preview=True)
-        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=hybrid_{str_to_b64(file_er_id)}"
         await editable.edit(
             "**Your File Stored in my Database!**\n\n"
             f"Here is the Permanent Link of your file: {share_link} \n\n"

@@ -9,7 +9,7 @@ class Config(object):
 	BOT_TOKEN = os.environ.get("BOT_TOKEN")
 	BOT_USERNAME = os.environ.get("BOT_USERNAME")
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-100"))
-	BOT_OWNER = list(set(int(x) for x in os.environ.get("BOT_OWNER", "1412909688,2002398697").split(',')))
+	BOT_OWNER = list(set(int(x) for x in os.environ.get("BOT_OWNER", "1412909688,1234567890").split(',')))
 	DATABASE_URL = os.environ.get("DATABASE_URL")
 	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
 	LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
@@ -19,7 +19,7 @@ class Config(object):
 	BANNED_CHAT_IDS = list(set(int(x) for x in os.environ.get("BANNED_CHAT_IDS", "-1001362659779 -1001255795497").split()))
 	OTHER_USERS_CAN_SAVE_FILE = bool(os.environ.get("OTHER_USERS_CAN_SAVE_FILE", True))
 	ABOUT_BOT_TEXT = f"""
-This is Files Store Bot Specially made for @DramaOST
+This is Files Store Bot Specially made for @DramaHy
 
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
@@ -28,8 +28,8 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
 📡 **Hosted on:** [Private VPS](https://t.me/hybrid_bots)
 🧑🏻‍💻 **Developer:** @Hybrid_Vamp
-👥 **Support Group:** [Hybrid Chat](https://t.me/hybrid_chat)
-📢 **Updates Channel:** [Hybrid Bots](https://t.me/hybrid_bots)
+👥 **Updates Group:** [Hybrid Chat](https://t.me/DramaHy_Chat)
+📢 **Updates Channel:** [Hybrid Bots](https://t.me/DramaHy)
 """
 	ABOUT_DEV_TEXT = f"""
 🧑🏻‍💻 **Developer:** @Hybrid_Vamp
@@ -41,7 +41,7 @@ Also remember that developer will Delete Adult Contents from Database. So better
 [Donate Now](https://www.paypal.me/ZAbidKP) (PayPal)
 """
 	HOME_TEXT = """
-Hi, [{}](tg://user?id={})\n\nThis is Permanent **File Store Bot** made for @DramaOST.
+Hi, [{}](tg://user?id={})\n\nThis is Permanent **File Store Bot** made for @DramaHy.
 
 Send me any file I will give you a permanent Sharable Link. I Support Channel Also! Check **About Bot** Button.
 """
